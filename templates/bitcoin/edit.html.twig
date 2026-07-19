@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bitcoin{% endblock %}
+
+{% block body %}
+<div class="col-6">
+    <h1>Edit Bitcoin</h1>
+
+    {{ include('bitcoin/_form.html.twig', {'button_label': 'Update'}) }}
+
+   </div>
+{% endblock %}

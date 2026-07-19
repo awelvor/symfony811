@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bitcoin{% endblock %}
+
+{% block body %}
+    <h1>Bitcoin</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bitcoin.id }}</td>
+            </tr>
+            <tr>
+                <th>Compte</th>
+                <td>{{ bitcoin.compte }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ bitcoin.date ? bitcoin.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ bitcoin.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Credit</th>
+                <td>{{ bitcoin.credit }}</td>
+            </tr>
+            <tr>
+                <th>Debit</th>
+                <td>{{ bitcoin.debit }}</td>
+            </tr>
+            <tr>
+                <th>Banque</th>
+                <td>{{ bitcoin.banque ? bitcoin.banque|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Budget</th>
+                <td>{{ bitcoin.budget }}</td>
+            </tr>
+            <tr>
+                <th>Cheque</th>
+                <td>{{ bitcoin.cheque }}</td>
+            </tr>
+            <tr>
+                <th>Cbid</th>
+                <td>{{ bitcoin.cbid }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bitcoin_index') }}">back to list</a>
+
+    <a href="{{ path('app_bitcoin_edit', {'id': bitcoin.id}) }}">edit</a>
+
+    {{ include('bitcoin/_delete_form.html.twig') }}
+{% endblock %}

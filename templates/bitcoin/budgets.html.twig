@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bitcoin index{% endblock %}
+
+{% block body %}
+    <h1>Budgets</h1>
+<div class="container">
+<div class="row gx-5">
+<div class="col-3">
+<h5 style="text-align: center;">années</h5>
+  <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+               <th class="col-1">annee</th>
+                <th class="col-1">credit</th>
+                 <th class="col-1">debit</th>
+                <th class="col-1">solde</th>
+                </tr>
+        </thead>
+        <tbody>
+        {% for annuel in annuels %}
+            <tr>
+               <td><a href="http://127.0.0.1:8000/bitcoin/budgets/{{annuel.annee}}/janvier2015">{{ annuel.annee }}</a></td>
+               <td> {{ annuel.cr|number_format(2) }}</td>
+                <td> {{ annuel.de|number_format(2) }}</td>
+                <td> {{ annuel.solde|number_format(2) }}</td>
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    
+    <div class="col-3">
+    <h5 style="text-align: center;">{{ year }}</h5>
+  <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+            <th class="col-1">mois</th>
+            <th class="col-1">credit</th>
+             <th class="col-1">debit</th>
+            <th class="col-1">solde</th>
+                </tr>
+        </thead>
+        <tbody>
+        {% for mensuel in mensuels %}
+            <tr>
+<td><a href="http://127.0.0.1:8000/bitcoin/budgets/{{mensuel.budget|slice(-4)}}/{{mensuel.budget}}">{{ mensuel.budget}}</a></td>
+                <td>{{ mensuel.cr|number_format(2)}}</td>
+                <td>{{ mensuel.de|number_format(2)}}</td>
+                <td>{{ mensuel.solde|number_format(2)}}</td>
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+<div class="col-6">
+<h5 style="text-align: center;">{{ budget }}</h5>
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+               <th class="col-1">date</th>
+                <th class="col-2">libelle</th>
+                <th class="col-1">credit</th>
+                <th class="col-1">debit</th>
+                <th class="col-1">banque</th>
+                
+                </tr>
+        </thead>
+        <tbody>
+        {% for bitcoin in bitcoins %}
+            <tr>
+               <td style="text-align: end;">{{ bitcoin.date|date('d/m')}}</td>
+                <td class="col-3"><a href="{{ path('app_bitcoin_edit', {'id': bitcoin.id}) }}">{{ bitcoin.libelle }}</a></td>
+                <td class="text-end">{% if bitcoin.credit>0 %}{{ bitcoin.credit|number_format(2) }}{% endif %}</td>
+                <td class="text-end">{% if bitcoin.debit>0 %}{{ bitcoin.debit|number_format(2) }}{% endif %}</td>
+                <td style="text-align: end;">{{ bitcoin.banque ? bitcoin.banque|date('d/m')}}</td>
+               
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+<a href="{{ path('app_bitcoin_new') }}">Create new</a>
+    </div>
+{% endblock %}

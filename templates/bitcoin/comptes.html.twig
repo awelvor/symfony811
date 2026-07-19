@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bitcoin index{% endblock %}
+
+{% block body %}
+    
+
+<h4>Bitcoin  {{ compte }}</h4>
+
+    <div class="row">
+   <div class="col-2">
+  
+   <table class="table table-sm table-hover">
+{% for bitcoin  in bitcoins3 %}
+<tr>
+<td class="text-start"><a href="http://127.0.0.1:8000/bitcoin/comptes/{{bitcoin.compte}}">{{ bitcoin.compte }}</a></td>
+<td class="text-end">{{ bitcoin.solde|number_format(2)  }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+<div class="col-1"></div>
+
+<div class="col-8">
+
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+               
+             
+                <th>date</th>
+                <th>libelle</th>
+                <th>credit</th>
+                <th>debit</th>
+                <th>banque</th>
+                <th>budget</th>
+                <th>cbid</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bitcoin in bitcoins1 %}
+            <tr>
+               
+               
+                <td class="col-2">{{ bitcoin.date ? bitcoin.date|date('Y-m-d') : '' }}</td>
+                <td class="col-3"><a href="{{ path('app_bitcoin_edit', {'id': bitcoin.id}) }}">{{ bitcoin.libelle }}</a></td>
+                <td class="col-1 text-end">{% if bitcoin.credit>0 %}{{ bitcoin.credit }}{% endif %}</td>
+                <td class="col-1 text-end">{% if bitcoin.debit>0 %}{{ bitcoin.debit|number_format(2)  }}{% endif %}</td>
+                <td class="col-2"></td>
+                <td class="col-2">{{ bitcoin.budget }}</td>
+                
+               
+            </tr>
+        {% endfor %}
+        <tr>
+               
+               
+                <td class="col-2 text-center">*</td>
+                <td class="col-3 text-center">*</td>
+                <td class="col-1 text-center"></td>
+                <td class="col-1 text-center"></td>
+                <td class="col-2 text-center">*</td>
+                <td class="col-2 text-center">*</td>
+                
+               
+            </tr>
+        
+        {% for bitcoin in bitcoins2 %}
+            <tr>
+               
+             
+                <td class="col-2">{{ bitcoin.date ? bitcoin.date|date('Y-m-d') : '' }}</td>
+                <td class="col-3"><a href="{{ path('app_bitcoin_edit', {'id': bitcoin.id}) }}">{{ bitcoin.libelle }}</a></td>
+                <td class="col-1 text-end">{% if bitcoin.credit>0 %}{{ bitcoin.credit }}{% endif %}</td>
+                <td class="col-1 text-end">{% if bitcoin.debit>0 %}{{ bitcoin.debit|number_format(2) }}{% endif %}</td>
+                <td class="col-2">{{ bitcoin.banque ? bitcoin.banque|date('Y-m-d') : '' }}</td>
+                <td class="col-2">{{ bitcoin.budget }}</td>
+                <td class="col-1">{{ bitcoin.cbid }}</td>
+                
+                
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    <a href="{{ path('app_bitcoin_new') }}">Create new</a>
+  
+{% endblock %}

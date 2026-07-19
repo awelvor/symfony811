@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bitcoin index{% endblock %}
+
+{% block body %}
+    <h1>Bitcoin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Compte</th>
+                <th>Date</th>
+                <th>Libelle</th>
+                <th>Credit</th>
+                <th>Debit</th>
+                <th>Banque</th>
+                <th>Budget</th>
+                <th>Cheque</th>
+                <th>Cbid</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bitcoin in bitcoins %}
+            <tr>
+                <td>{{ bitcoin.id }}</td>
+                <td>{{ bitcoin.compte }}</td>
+                <td>{{ bitcoin.date ? bitcoin.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ bitcoin.libelle }}</td>
+                <td>{{ bitcoin.credit }}</td>
+                <td>{{ bitcoin.debit }}</td>
+                <td>{{ bitcoin.banque ? bitcoin.banque|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ bitcoin.budget }}</td>
+                <td>{{ bitcoin.cheque }}</td>
+                <td>{{ bitcoin.cbid }}</td>
+                <td>
+                    <a href="{{ path('app_bitcoin_show', {'id': bitcoin.id}) }}">show</a>
+                    <a href="{{ path('app_bitcoin_edit', {'id': bitcoin.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_bitcoin_new') }}">Create new</a>
+{% endblock %}
