@@ -1,0 +1,25 @@
+{# templates/emails/signup.html.twig #}
+{% apply inline_css %}
+    <style>
+        {# here, define your CSS styles as usual #}
+        h1 {
+            color: #f00;
+        }
+    </style>
+
+    <h1>Welcome  {{ username }}!</h1>
+    {# ... #}
+{% endapply %}
+
+{% apply inky_to_html %}
+    <container>
+        <row class="header">
+            <columns>
+                <spacer size="16"></spacer>
+                <h1 class="text-center">Welcome inky_to_html !</h1>
+            </columns>
+
+            {# ... #}
+        </row>
+    </container>
+{% endapply %}
