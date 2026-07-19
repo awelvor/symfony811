@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actifs{% endblock %}
+
+{% block body %}
+    <h1>Actifs index</h1>
+     {# c1 Sequoia P.  #}
+     {# c2 PEA N titres #}
+     {# c3 PEA N espèces #}
+     {# c4 Sequoia N euros #}
+     {# c5 Monétaire #}
+     {# c6 Sequoia N quattro #}
+     {# c7 Sequoia N .taux fixe #}
+     {# c8 Sequoia N quietude #}
+     {# c9 Sequoia N ambre #}
+     {# c10 CTO P #}
+     {# c11 CEF J #}
+     {# c12 PEA P #}
+     {# c13 AV P  #}
+     {# c14 CTO N #}
+     {# c15 CEF J #}
+     {# c16 PEA PME N #}
+     {# c17 AVie N #}
+     
+     
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th><button type="button" class="btn btn-outline-primary">CreatedAt</button></th>
+                <th><button type="button" class="btn btn-outline-primary">Seq.P.</button></th>
+                
+               <th><button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal1">PEA N.</button></th>
+               
+               <th><button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal2">Seq N.1</button></th>
+                <th><button type="button" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#modal3">Seq N.2</button></th>
+                <th><button type="button" class="btn btn-outline-primary">CTO P.</button></th>
+                <th><button type="button" class="btn btn-outline-primary">CEF P.N.</button></th>
+                <th><button type="button" class="btn btn-outline-primary">PEA P.</button></th>
+                <th><button type="button" class="btn btn-outline-primary">AV P.</button></th>
+                <th><button type="button" class="btn btn-outline-primary">PEA N.</button></th>
+                
+                <th><button type="button" class="btn btn-outline-primary">CTO N.</button></th>
+                <th><button type="button" class="btn btn-outline-primary">AV N.</button></th>
+                
+                <th><button type="button" class="btn btn-outline-primary">Total</button></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actif in actifs|reverse %}
+        
+{% set total= actif.c1  + actif.c2  + actif.c3  + actif.c4  + actif.c5  + actif.c6  + actif.c7  + actif.c8 + actif.c9 
+            + actif.c10 + actif.c11 + actif.c13 + actif.c14 + actif.c15 + actif.c16 + actif.c17 + actif.c18 %}
+
+            <tr>
+                
+                <td>{{ actif.createdAt|date('Y-m-d') }}</td>
+                <td>{{ actif.c1 }}</td>
+                <td>{{ actif.c2 + actif.c3 }}</td>
+                {# sequoia nicole #}
+                <td>{{ actif.c4 + actif.c5 + actif.c15 + actif.c16 + actif.c18 }}</td>
+                {# sequoia nicole #}
+                <td>{{ actif.c6 + actif.c17}}</td>
+                <td>{{ actif.c7 }}</td>
+                <td>{{ actif.c8 }}</td>
+                <td>{{ actif.c9 }}</td>
+                <td>{{ actif.c10 }}</td>
+                <td>{{ actif.c11 }}</td>
+                
+                <td>{{ actif.c13 }}</td>
+                <td>{{ actif.c14 }}</td>
+                <td>{{ total }}</td>
+                
+            </tr>
+        
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_actifs_new') }}">Create new</a>
+    
+<!-- Modal1: PEA Nicole -->
+<div class="modal fade" id="modal1"  >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <table class="table"><thead><tr>
+        <th>CreatedAt</th>
+        <th>Euros</th>
+        <th>Monétaire</th>
+        <th>Total</th>
+        </tr></thead>
+<tbody>   
+{% for actif in actifs|reverse %}
+<tr>
+<td>{{ actif.createdAt|date('Y-m-d') }}</td>
+<td>{{ actif.c2 }}</td>
+<td>{{ actif.c3 }}</td>
+
+<td>{{ actif.c2 + actif.c3 }}</td>
+</tr>   
+{% endfor %}  
+</table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>    
+    
+    
+    <!-- Modal2: Sequoia1 Nicole -->
+<div class="modal fade" id="modal2"  >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <table class="table"><thead><tr>
+        <th>CreatedAt</th>
+        <th>Euros</th>
+        <th>Monétaire</th>
+        <th>SG Quatro</th>
+        <th>SG TxFx</th>
+        <th>SG Bleuet</th>
+        <th>Total</th>
+        </tr></thead>
+<tbody>   
+{% for actif in actifs|reverse %}
+<tr>
+<td>{{ actif.createdAt|date('Y-m-d') }}</td>
+<td>{{ actif.c4 }}</td>
+<td>{{ actif.c15 }}</td>
+<td>{{ actif.c5 }}</td>
+<td>{{ actif.c16 }}</td>
+<td>{{ actif.c18 }}</td>
+<td>{{ actif.c4 + actif.c5 + actif.c15 + actif.c16 + actif.c18}}</td>
+</tr>   
+{% endfor %}  
+</table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>  
+
+<!-- Modal3: Sequoia2 Nicole -->
+<div class="modal fade" id="modal3"  >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <table class="table"><thead><tr>
+        <th>CreatedAt</th>
+        <th>SG Quietude</th>
+        <th>SG Ambre</th>
+        <th>Total</th>
+        </tr></thead>
+<tbody>   
+{% for actif in actifs|reverse %}
+<tr>
+<td>{{ actif.createdAt|date('Y-m-d') }}</td>
+<td>{{ actif.c6}}</td>
+<td>{{ actif.c17 }}</td>
+<td>{{ actif.c6 + actif.c17}}</td>
+</tr>   
+{% endfor %}  
+</table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+
+{% endblock %}
+
+
+

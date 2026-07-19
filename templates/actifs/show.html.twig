@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actifs{% endblock %}
+
+{% block body %}
+    <h1>Actifs show</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ actif.id }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ actif.createdAt ? actif.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>C1</th>
+                <td>{{ actif.c1 }}</td>
+            </tr>
+            <tr>
+                <th>C2</th>
+                <td>{{ actif.c2 }}</td>
+            </tr>
+            <tr>
+                <th>C3</th>
+                <td>{{ actif.c3 }}</td>
+            </tr>
+            <tr>
+                <th>C4</th>
+                <td>{{ actif.c4 }}</td>
+            </tr>
+            <tr>
+                <th>C5</th>
+                <td>{{ actif.c5 }}</td>
+            </tr>
+            <tr>
+                <th>C6</th>
+                <td>{{ actif.c6 }}</td>
+            </tr>
+            <tr>
+                <th>C7</th>
+                <td>{{ actif.c7 }}</td>
+            </tr>
+            <tr>
+                <th>C8</th>
+                <td>{{ actif.c8 }}</td>
+            </tr>
+            <tr>
+                <th>C9</th>
+                <td>{{ actif.c9 }}</td>
+            </tr>
+            <tr>
+                <th>C10</th>
+                <td>{{ actif.c10 }}</td>
+            </tr>
+            <tr>
+                <th>C11</th>
+                <td>{{ actif.c11 }}</td>
+            </tr>
+            <tr>
+                <th>C12</th>
+                <td>{{ actif.c12 }}</td>
+            </tr>
+            <tr>
+                <th>C13</th>
+                <td>{{ actif.c13 }}</td>
+            </tr>
+            <tr>
+                <th>C14</th>
+                <td>{{ actif.c14 }}</td>
+            </tr>
+            <tr>
+                <th>C15</th>
+                <td>{{ actif.c15 }}</td>
+            </tr>
+            <tr>
+                <th>C16</th>
+                <td>{{ actif.c16 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_actifs_index') }}">back to list</a>
+
+    <a href="{{ path('app_actifs_edit', {'id': actif.id}) }}">edit</a>
+
+    {{ include('actifs/_delete_form.html.twig') }}
+{% endblock %}

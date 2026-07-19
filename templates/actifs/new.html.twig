@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Actifs{% endblock %}
+
+{% block body %}
+    <h1>Create new Actifs2</h1>
+
+    {% include('actifs/_form.html.twig') %}
+
+    <a href="{{ path('app_actifs_index') }}">back to list</a>
+{% endblock %}
