@@ -28,7 +28,7 @@ jobs:
       # 1. Récupération du code source
       - name: Checkout code
         uses: actions/checkout@v6
-      - run: unzip sauvegardes/mydb73-2025-10-19.sql.zip
+      - run: unzip sql/sfy810-20260723.sql.zip
 
       # 2. Installation de client MySQL (optionnel, pour exécuter des requêtes)
       - name: Install MySQL Client
