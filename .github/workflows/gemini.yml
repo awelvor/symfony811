@@ -39,7 +39,7 @@ jobs:
       # 3. Test de connexion et création de tables (si nécessaire)
       - name: Initialize Database Schema
         run: |
-          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < mydb73-2025-10-19.sql
+          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sfy810-20260723.sql.zip
             
 
       # 4. Exécuter vos tests ou scripts
