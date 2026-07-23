@@ -1,0 +1,50 @@
+name: MySQL Database Workflow
+
+on:
+  push:
+    branches: [ main ]
+ 
+
+jobs:
+  setup-and-test:
+    runs-on: ubuntu-latest
+
+    # Déclaration du service MySQL
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root_password
+          MYSQL_DATABASE: ma_base_de_donnees
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      # 1. Récupération du code source
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - run: unzip sauvegardes/mydb73-2025-10-19.sql.zip
+
+      # 2. Installation de client MySQL (optionnel, pour exécuter des requêtes)
+      - name: Install MySQL Client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mysql-client
+
+      # 3. Test de connexion et création de tables (si nécessaire)
+      - name: Initialize Database Schema
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < mydb73-2025-10-19.sql
+            
+
+      # 4. Exécuter vos tests ou scripts
+      - name: Run Tests
+        run: |
+          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees -e"show tables;"
+          echo "La base de données est prête et opérationnelle !"
+          # Insérer ici vos commandes de test (ex: npm test, pytest, etc.)
