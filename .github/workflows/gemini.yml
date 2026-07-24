@@ -46,6 +46,6 @@ jobs:
       - name: Run Tests
         run: |
           mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees -e"show tables;"
-          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sql/comptes.sql
+          mysql -h 127.0.0.1 -P 3306 -u root -proot_password --html ma_base_de_donnees < sql/comptes.sql
           echo "La base de données est prête et opérationnelle !"
           # Insérer ici vos commandes de test (ex: npm test, pytest, etc.)
