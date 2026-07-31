@@ -28,7 +28,7 @@ jobs:
       # 1. Récupération du code source
       - name: Checkout code
         uses: actions/checkout@v6
-      - run: unzip sql/sfy810-20260724.sql.zip
+      - run: unzip sql/sfy810-20260731.sql.zip
 
       # 2. Installation de client MySQL (optionnel, pour exécuter des requêtes)
       - name: Install MySQL Client
@@ -39,7 +39,7 @@ jobs:
       # 3. Test de connexion et création de tables (si nécessaire)
       - name: Initialize Database Schema
         run: |
-          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sfy810-20260724.sql
+          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sfy810-20260731.sql
             
 
       # 4. Exécuter vos tests ou scripts
