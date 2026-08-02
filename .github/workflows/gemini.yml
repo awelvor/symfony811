@@ -33,7 +33,7 @@ jobs:
 
       # 1.bis Installer PHP (Indispensable pour Symfony / Composer / PHPUnit)
       - name: Setup PHP
-        uses: shivammathur/setup-php@v3
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2' # Adaptez selon la version requise par votre projet Symfony (ex: 8.2 ou 8.3)
           extensions: mbstring, xml, ctype, iconv, pdo_mysql
