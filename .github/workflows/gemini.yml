@@ -50,3 +50,7 @@ jobs:
           mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sql/actifs.sql
           echo "La base de données est prête et opérationnelle !"
           # Insérer ici vos commandes de test (ex: npm test, pytest, etc.)
+
+      # 5. PHPUnit
+      - run: composer require --dev symfony/test-pack
+      - run: php bin/phpunit
