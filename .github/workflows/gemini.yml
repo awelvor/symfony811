@@ -30,6 +30,14 @@ jobs:
         uses: actions/checkout@v6
       - run: unzip sql/sfy810-20260731.sql.zip
 
+
+      # 1.bis Installer PHP (Indispensable pour Symfony / Composer / PHPUnit)
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v3
+        with:
+          php-version: '8.2' # Adaptez selon la version requise par votre projet Symfony (ex: 8.2 ou 8.3)
+          extensions: mbstring, xml, ctype, iconv, pdo_mysql
+
       # 2. Installation de client MySQL (optionnel, pour exécuter des requêtes)
       - name: Install MySQL Client
         run: |
