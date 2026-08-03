@@ -28,7 +28,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-     
       # 2. Décompression et installation du client MySQL
       - name: Install MySQL Client & Unzip DB
         run: |
@@ -49,23 +48,20 @@ jobs:
           mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sql/actifs.sql
           echo "La base de données est prête et opérationnelle !"
 
-
-          - run: ls
+      - name: List files
+        run: ls -la
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # (Optionnel : Ajoutez ici vos étapes d'installation et de build de votre framework ex: npm install && npm run build)
-
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          # Indiquez le dossier qui contient vos fichiers statiques prêts pour le web (ex: "dist", "build", ".")
           path: "." 
 
   # Étape 2 : Publication de l'artefact sur GitHub Pages
   deploy:
-    needs: build
+    needs: setup-and-test
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -74,5 +70,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-    
