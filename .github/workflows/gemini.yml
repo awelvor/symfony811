@@ -33,12 +33,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y mysql-client
-          unzip sql/sfy810-20260731.sql.zip -d sql/
+          unzip sql/sfy810-20260808.sql.zip -d sql/
 
       # 3. Test de connexion et création de tables
       - name: Initialize Database Schema
         run: |
-          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sql/sfy810-20260731.sql
+          mysql -h 127.0.0.1 -P 3306 -u root -proot_password ma_base_de_donnees < sql/sfy810-20260808.sql
 
       # 4. Exécuter vos scripts SQL et vérifications
       - name: Run SQL Scripts & Tests
