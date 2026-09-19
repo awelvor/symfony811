@@ -11,7 +11,9 @@ values
 insert into bitcoin
 (compte, date, libelle, credit, debit,banque, budget,cbid)
 values
-('cb boursorama','2026-09-18','intermarché', 0.0,49.58,'2026-09-18','septembre2026',1372014),
+('cb boursorama','2026-09-18','intermarché', 0.0,49.58,'2026-09-19','septembre2026',1372014),
+('cb boursorama','2026-09-19','super u'    , 0.0,21.23,'2026-09-19','septembre2026',9230893),
+('cb boursorama','2026-09-19','tea vanni'  , 0.0, 2.70,'2026-09-19','septembre2026',0407446),
 
 
 
