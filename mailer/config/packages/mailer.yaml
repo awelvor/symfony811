@@ -1,0 +1,4 @@
+framework:
+    mailer:
+        dsn: '%env(MAILER_DSN)%'
+        message_bus: false # <--- C'est cette ligne qui force l'envoi direct
