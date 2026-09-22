@@ -16,6 +16,8 @@ values
 ('cb boursorama','2026-09-19','tea vanni'     , 0.0, 2.70,'2026-09-19','septembre2026',0407446),
 ('cc boursorama','2026-09-20','P. CULTE CATHO', 0.0, 5.00,'2026-09-20','septembre2026',NULL),
 ('cb boursorama','2026-09-21','HPY VEEPEE'    , 0.0,97.99,'2026-09-21','septembre2026',NULL),
+('cb boursorama','2026-09-22','intermarché'   , 0.0,38.07,'2026-09-22','septembre2026',1781323),
+('cb boursorama','2026-09-22','lidl'          , 0.0,47.56,'2026-09-22','septembre2026',2082747),
 
 
 
