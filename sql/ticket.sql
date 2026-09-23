@@ -18,6 +18,8 @@ values
 ('cb boursorama','2026-09-21','HPY VEEPEE'    , 0.0,97.99,'2026-09-21','septembre2026',NULL),
 ('cb boursorama','2026-09-22','intermarché'   , 0.0,38.07,'2026-09-22','septembre2026',1781323),
 ('cb boursorama','2026-09-22','lidl'          , 0.0,47.56,'2026-09-22','septembre2026',2082747),
+('ccsg'         ,'2026-09-25','etienne'       , 0.0,30.00,NULL,'septembre2026',2082747),
+
 
 
 
