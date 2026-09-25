@@ -19,7 +19,7 @@ values
 ('cb boursorama','2026-09-22','intermarché'   , 0.0,38.07,'2026-09-22','septembre2026',1781323),
 ('cb boursorama','2026-09-22','lidl'          , 0.0,47.56,'2026-09-22','septembre2026',2082747),
 ('ccsg'         ,'2026-09-25','etienne'       , 0.0,30.00,NULL,       'septembre2026',NULL),
-('cb boursorama','2026-09-25','sp95 e10'      , 0.0,70.99,'2026-09-25','septembre2026',NULL),
+('cb boursorama','2026-09-25','sp95 e10'      , 0.0,70.99,'2026-09-25','septembre2026',0129582),
 ('cb boursorama','2026-09-25','lidl'          , 0.0, 9.31,'2026-09-25','septembre2026',2082747),
 ('cb boursorama','2026-09-25','biocoop'       , 0.0,20.16,'2026-09-25','septembre2026',0403736),
 
