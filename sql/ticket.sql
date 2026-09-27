@@ -22,6 +22,7 @@ values
 ('cb boursorama','2026-09-25','sp95 e10'      , 0.0,70.99,'2026-09-25','septembre2026',0129582),
 ('cb boursorama','2026-09-25','lidl'          , 0.0, 9.31,'2026-09-25','septembre2026',2082747),
 ('cb boursorama','2026-09-25','biocoop'       , 0.0,20.16,'2026-09-25','septembre2026',0403736),
+('cc boursorama','2026-09-27','P. CULTE CATHO', 0.0, 5.00,'2026-09-27','septembre2026',NULL),
 
 
 
