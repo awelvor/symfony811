@@ -1,3 +1,9 @@
+carte bleu
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="septembre2026" 
+  order by date;
+
 select id, date, libelle, debit 
   from bitcoin 
   where compte="cb boursorama" and budget="aout2026" 
