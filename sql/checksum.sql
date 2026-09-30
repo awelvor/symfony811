@@ -44,6 +44,12 @@ select id, date, libelle, debit
   where compte="cb boursorama" and budget="janvier2026" 
   order by date;
 
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="decembre2025" 
+  order by date;
+
+
 
 select round(sum(debit),2) 
   from bitcoin 
