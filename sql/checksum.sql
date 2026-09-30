@@ -9,6 +9,41 @@ select id, date, libelle, debit
   from bitcoin 
   where compte="cb boursorama" and budget="aout2026" 
   order by date;
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="juillet2026" 
+  order by date;
+
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="juin2026" 
+  order by date;
+
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="mai2026" 
+  order by date;
+
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="avril2026" 
+  order by date;
+
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="mars2026" 
+  order by date;
+
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="fevrier2026" 
+  order by date;
+
+select id, date, libelle, debit 
+  from bitcoin 
+  where compte="cb boursorama" and budget="janvier2026" 
+  order by date;
+
 
 select round(sum(debit),2) 
   from bitcoin 
