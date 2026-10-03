@@ -9,7 +9,7 @@ select id, date, libelle, debit
   from bitcoin 
   where compte="cb boursorama" and budget="aout2026" 
   order by date;
-select id, date, libelle, debit 
+select id, date, libelle, credit, debit 
   from bitcoin 
   where compte="cb boursorama" and budget="juillet2026" 
   order by date;
