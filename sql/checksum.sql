@@ -1,8 +1,8 @@
 carte bleue
   
-select id, date, libelle, credit,debit, budget,cheque
+select id, banque, libelle, credit,debit, budget,cheque
   from bitcoin 
-  where compte="ccsg" and (budget="janvier2026")
+  where compte="ccsg" and budget="janvier2026"
   order by banque;
   
   select id, date, libelle, debit 
