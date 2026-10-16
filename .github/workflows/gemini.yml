@@ -59,14 +59,4 @@ jobs:
         with:
           path: "." 
 
-  # Étape 2 : Publication de l'artefact sur GitHub Pages
-  deploy:
-    needs: setup-and-test
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  
