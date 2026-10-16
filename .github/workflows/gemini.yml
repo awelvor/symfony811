@@ -26,7 +26,7 @@ jobs:
     steps:
       # 1. Récupération du code source
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # 2. Décompression et installation du client MySQL
       - name: Install MySQL Client & Unzip DB
